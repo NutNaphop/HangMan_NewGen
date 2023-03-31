@@ -29,12 +29,14 @@ class game : public import{
         int length ; 
         string alpha ;
         string word ; 
-        string temp_word ; 
+        string temp_word ;
+        static string name ; 
         static char guess[20] ;
         void randWord(string *arr); 
         void remaining(char* arr);
         void restart();
         int inGame();
+        string getName();
         
 };
 
@@ -42,7 +44,7 @@ int game::life = 7  ;
 int game::score = 0 ;
 int game::count = 0 ;
 char game::guess[] = {}; 
-
+string game::name = "player1" ;
 
 class animation{
     public : 
@@ -63,8 +65,8 @@ class display {
     public : 
         display(int score , int life);
         display(int life);
-        void HUD(int score , int life){
-        cout << "Life : " << life << " Score : " << score << endl  ;
+        static void HUD(int score , int life){
+        cout << "Name : " << game::name << " Life : " << life << " Score : " << score << endl  ;
         }
 };
 

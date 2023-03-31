@@ -65,11 +65,25 @@ void game::remaining(char* arr){
                             }
                 cout << endl ;
 }
-
+string game::getName(){
+        while (true){
+            cout << "Input You Name : " ; 
+            getline(cin,name);  
+            for (int i = 0 ; i < name.length() ; i ++ ){
+                if (isspace(name[i])){
+                    cout << "non whitespace" ;;
+                    getName();
+                }
+            } 
+        return name ;
+        }
+};
 int game::inGame(){
     animation objA ; 
+    game::getName();
     game::restart();
     game::randWord(words);
+    display::HUD(score,life);
     objA.animate(life);
     game::remaining(guess);
     cout << word << endl;

@@ -120,13 +120,11 @@ void animation::animate(int life){
 
 display::display(int score , int life){
     cout << "---True!---" << endl << endl ;
-    cout << "Now you got 10 Point" << endl ; 
+    cout << "Now you got 10 Point" << endl << endl ; 
     }
 display::display(int life){
     cout << "---False---" << endl << endl ;
     cout << "Unfortunately Wrong" << endl ; 
-    cout << "Remaining changes " << life << " left" << endl ;
-    }
-    void HUD(int score , int life){
-    cout << "Life : " << life << " Score : " << score << endl  ;
+    cout << "Remaining changes " << life << " left" << endl << endl ;
+    
     }

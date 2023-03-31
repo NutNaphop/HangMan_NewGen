@@ -7,3 +7,5 @@ int main(){
     obj1.ImportFile(3);
     obj1.inGame();
 }
+
+// Name : Life : Score : 
