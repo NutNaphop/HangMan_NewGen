@@ -1,4 +1,5 @@
 #include "../library/mylib.hpp"
+#include "display.cpp"
 #ifndef MYGAME_HPP
 #define MYGAME_HPP
 int import::ImportFile(int choice){
@@ -6,13 +7,13 @@ int import::ImportFile(int choice){
         if (choice >= 1 && choice <= 3){
                 switch (choice){
                     case 1 : 
-                        filename = "../text/word.txt";
-                        break;
-                    case 2 : 
                         filename = "../text/animal.txt";
                         break;
+                    case 2 : 
+                        filename = "../text/country.txt";
+                        break;
                     case 3 : 
-                        filename = "question/daily.txt";
+                        filename = "../text/all.txt";
                         break;
                 }
                 myfile.open(filename);
@@ -26,7 +27,6 @@ int import::ImportFile(int choice){
                     index ++ ;
             } 
             myfile.close() ;
-            index = 0 ;  
             return 1 ; // if complete  it will return 1 
         };
 };
@@ -47,7 +47,7 @@ void game::restart(){
 void game::randWord(string *arr){
     cout << word ;
     srand((unsigned) time(NULL)); 
-    random = rand() % 5 ; 
+    random = rand() % index ; 
     word = arr[random] ; 
     temp_word = word ;  
 }
@@ -67,8 +67,10 @@ void game::remaining(char* arr){
 }
 
 int game::inGame(){
+    animation objA ; 
     game::restart();
     game::randWord(words);
+    objA.animate(life);
     game::remaining(guess);
     cout << word << endl;
     while (life != 0){ // I choose this cuz it non error
@@ -93,6 +95,7 @@ int game::inGame(){
                             score += 10 ; 
                             display objD(10,life);
                             objD.HUD(score,life);
+                            objA.animate(life);
                             break;
                         }else if (alpha[0] != word[j]){
                             if (j == word.length()-1){
@@ -100,13 +103,16 @@ int game::inGame(){
                                 game::remaining(guess);
                                 display objD(life);
                                 objD.HUD(0,life);
+                                objA.animate(life);
                                 break;
                             }
                         }
                     }
                 }
             if (life == 0){
-                cout << temp_word << endl ;
+                cout << "The Answer is : "<<temp_word << endl ;
+                index = 0 ;
+                cout << index ; 
                 system("pause") ; 
                 return 0 ; 
             } 

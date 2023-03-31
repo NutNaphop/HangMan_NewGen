@@ -14,7 +14,7 @@ class import {
         string filename;
         string line ;
         string words[100]; 
-        static int index ; 
+        static int index ;
         int ImportFile(int choice);
         void showFile();
 };
@@ -28,9 +28,9 @@ class game : public import{
         int random ;  
         int length ; 
         string alpha ;
-        static char guess[20] ;
         string word ; 
         string temp_word ; 
+        static char guess[20] ;
         void randWord(string *arr); 
         void remaining(char* arr);
         void restart();
@@ -38,29 +38,15 @@ class game : public import{
         
 };
 
-int game::life = 8  ; 
+int game::life = 7  ; 
 int game::score = 0 ;
 int game::count = 0 ;
 char game::guess[] = {}; 
 
-class display {
-    public : 
-        display(int score , int life){
-        cout << "---True!---" << endl << endl ;
-        cout << "Now you got 10 Point" << endl ; 
-        }
-        display(int life){
-        cout << "---False---" << endl << endl ;
-        cout << "Unfortunately Wrong" << endl ; 
-        cout << "Remaining changes " << life << " left" << endl ;
-        }
-        void HUD(int score , int life){
-        cout << "Life : " << life << " Score : " << score << endl  ;
-        }
-};
 
-class animation : public display{
+class animation{
     public : 
+        void animate(int a);
         void eight();
         void seven();
         void six();
@@ -70,5 +56,17 @@ class animation : public display{
         void two();
         void one();
 };
+
+
+
+class display {
+    public : 
+        display(int score , int life);
+        display(int life);
+        void HUD(int score , int life){
+        cout << "Life : " << life << " Score : " << score << endl  ;
+        }
+};
+
 
 # endif

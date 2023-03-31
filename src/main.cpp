@@ -4,6 +4,6 @@
 int main(){
     game obj1 ; 
     int a ;
-    obj1.ImportFile(2);
+    obj1.ImportFile(3);
     obj1.inGame();
 }

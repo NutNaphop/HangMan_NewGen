@@ -1,5 +1,0 @@
-camel
-capybara
-cat
-ant
-snake
