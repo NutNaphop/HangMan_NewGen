@@ -71,7 +71,7 @@ string game::getName(){
             getline(cin,name);  
             for (int i = 0 ; i < name.length() ; i ++ ){
                 if (isspace(name[i])){
-                    cout << "non whitespace" ;;
+                    cout << "non whitespace please try again" << endl;;
                     getName();
                 }
             } 
