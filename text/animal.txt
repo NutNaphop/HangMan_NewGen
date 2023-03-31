@@ -1,2 +1,5 @@
-Camel
-Capybara
+camel
+capybara
+cat
+ant
+snake

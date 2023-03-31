@@ -2,8 +2,8 @@
 #include <iostream>
 
 int main(){
-    import obj1 ; 
-    obj1.ImportFile(1);
-    obj1.showFile();
+    game obj1 ; 
+    int a ;
     obj1.ImportFile(2);
+    obj1.inGame();
 }
