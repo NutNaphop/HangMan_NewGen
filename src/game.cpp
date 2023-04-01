@@ -80,7 +80,7 @@ string game::getName(){
 };
 int game::inGame(){
     animation objA ; 
-    game::getName();
+    game::getName(); // We need to move this but not now
     game::restart();
     game::randWord(words);
     display::HUD(score,life);
@@ -92,7 +92,6 @@ int game::inGame(){
                     break;
                 }
                 // Check Detect Error out of range lowercase alpha 
-
                     do {
                         cout << "Input : " ; cin >> alpha ;
                         if (!islower(alpha[0])){
@@ -103,21 +102,21 @@ int game::inGame(){
                     for (int j = 0 ; j < word.length() ; j++){
                         if (alpha[0] == word[j]){
                             guess[j] = word[j] ;
-                            game::remaining(guess);
                             word[j] = '\0' ; 
                             count ++ ;
                             score += 10 ; 
                             display objD(10,life);
                             objD.HUD(score,life);
                             objA.animate(life);
+                            game::remaining(guess);
                             break;
                         }else if (alpha[0] != word[j]){
                             if (j == word.length()-1){
                                 life --;
-                                game::remaining(guess);
                                 display objD(life);
                                 objD.HUD(0,life);
                                 objA.animate(life);
+                                game::remaining(guess);
                                 break;
                             }
                         }
