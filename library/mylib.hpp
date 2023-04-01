@@ -1,22 +1,53 @@
 #ifndef MYLIB_HPP
 #define MYLIB_HPP
 
-# include <iostream>
-# include <fstream>
-# include <string>
-# include <cstring>
-# include <ctime>
-# include <string.h>
+# include <iostream> // base c++
+# include <fstream> // file 
+# include <string> // string method
+# include <cstring> // string method 
+# include <ctime> // random 
+# include <string.h> // String method  
+# include <stdio.h> // Why ?
+# include <sstream> // sort score function
+# include <vector> // sort score function
+# include <algorithm> // sort score function
+# include <tuple> // sort score function
 
 using namespace std ;
+//Menu 
+class menugame{
+    public :
+     string choice;
+     int showMenu(); 
+     void showHighScore() ;
+     void showVocab() ;
+     void showHowto();
+};
+
+class highscore : public menugame{
+    public : 
+        string line ;
+        string name , mode ;
+        int score ;
+        void importScore();
+        void sortByScoreDescending();
+        void display();
+        void writeHis(string name , string mode , int score);
+    private:
+        vector<tuple<string, string, int>> scores_;
+};
+
 class import {
     public : 
         string filename;
         string line ;
+        string category ; 
+        int choose ; 
         string words[100]; 
         static int index ;
         int ImportFile(int choice);
         void showFile();
+        void selectCate();
 };
 int import::index = 0 ;
 
@@ -58,7 +89,6 @@ class animation{
         void two();
         void one();
 };
-
 
 
 class display {

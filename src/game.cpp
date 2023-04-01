@@ -8,12 +8,15 @@ int import::ImportFile(int choice){
                 switch (choice){
                     case 1 : 
                         filename = "../text/animal.txt";
+                        category = "animal" ;
                         break;
                     case 2 : 
                         filename = "../text/country.txt";
+                        category = "country" ;
                         break;
                     case 3 : 
                         filename = "../text/all.txt";
+                        category = "One for all" ;
                         break;
                 }
                 myfile.open(filename);
@@ -36,6 +39,11 @@ void import::showFile(){
         cout << words[i] << endl ;
     }
 }
+void import::selectCate() { // Need to fix bug 
+
+    cout << "Select Cate : " ; cin >> choose;  
+    import::ImportFile(choose);
+};
 
 void game::restart(){
     for (int i = 0 ; i < word.length() ; i++){
@@ -66,13 +74,14 @@ void game::remaining(char* arr){
                 cout << endl ;
 }
 string game::getName(){
+        cout << "Before We Start I need to know your name : " << endl; 
         while (true){
             cout << "Input You Name : " ; 
             getline(cin,name);  
             for (int i = 0 ; i < name.length() ; i ++ ){
                 if (isspace(name[i])){
                     cout << "non whitespace please try again" << endl;;
-                    getName();
+                    game::getName();
                 }
             } 
         return name ;
@@ -80,7 +89,8 @@ string game::getName(){
 };
 int game::inGame(){
     animation objA ; 
-    game::getName(); // We need to move this but not now
+    highscore objHighscore ; 
+     // We need to move this but not now
     game::restart();
     game::randWord(words);
     display::HUD(score,life);
@@ -98,7 +108,6 @@ int game::inGame(){
                             cout << "Input Only lowercase" ;
                         }
                     }while (!islower(alpha[0]));
-
                     for (int j = 0 ; j < word.length() ; j++){
                         if (alpha[0] == word[j]){
                             guess[j] = word[j] ;
@@ -114,7 +123,7 @@ int game::inGame(){
                             if (j == word.length()-1){
                                 life --;
                                 display objD(life);
-                                objD.HUD(0,life);
+                                objD.HUD(score,life);
                                 objA.animate(life);
                                 game::remaining(guess);
                                 break;
@@ -125,7 +134,11 @@ int game::inGame(){
             if (life == 0){
                 cout << "The Answer is : "<<temp_word << endl ;
                 index = 0 ;
-                cout << index ; 
+                cout << "Hey " << game::name << "You have got " << game::score << " point" << endl ;
+                cout << "We will write it in our history, Hope you like it!" << endl ;
+                objHighscore.writeHis(name,category,score);
+                life = 7 ; 
+                score = 0 ;
                 system("pause") ; 
                 return 0 ; 
             } 
@@ -133,4 +146,5 @@ int game::inGame(){
                 game::inGame();
             }
 };
+
 #endif
