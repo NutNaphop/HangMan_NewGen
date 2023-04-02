@@ -1,7 +1,1 @@
 YAMdwZ NigthM 5000
-lnw Secret 10000
-lnw Country 120
-Naphop Animal 10
-qeq Animal 30
-qeq NigthM 80
-qeq Secret 10000

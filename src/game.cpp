@@ -136,7 +136,7 @@ int game::inGame(){
     display::HUD(score,life);
     objA.animate(life);
     game::remaining(guess);
-    cout << word << endl;
+    // cout << word << endl;
     while (life != 0){ // I choose this cuz it non error
                 if (count == word.length()){
                     break;
