@@ -191,6 +191,17 @@ void menugame::intro(){
     cout << "\t\t\t\t\t\t\t\t" << "|  __  | / /\\ \\ | . ` | | |_ | |\\/| | / /\\ \\ | . ` |" << endl;sleep(1.5) ;
     cout << "\t\t\t\t\t\t\t\t" << "| |  | |/ ____ \\| |\\  | |__| | |  | |/ ____ \\| |\\  |" << endl; sleep(1) ;
     cout << "\t\t\t\t\t\t\t\t" << "|_|  |_/_/    \\_\\_| \\_|\\_____|_|  |_/_/    \\_\\_| \\_|" << endl; sleep(1) ;
+    cout << endl ;
+    cout << "\t\t\t\t\t\t\t\t\t" << "       _______\t\tWORD HANG NOOSE" << endl;
+    cout << "\t\t\t\t\t\t\t\t\t" << "      |/      |\t\t\t  " << endl;
+    cout << "\t\t\t\t\t\t\t\t\t" << "      |      (_)\t\t\t  " << endl;
+    cout << "\t\t\t\t\t\t\t\t\t" << "      |      \\|/\t\t\t  " << endl;
+    cout << "\t\t\t\t\t\t\t\t\t" << "      |       |\t\t\t  " << endl;
+    cout << "\t\t\t\t\t\t\t\t\t" << "      |      / \\\t\t\t  " << endl;
+    cout << "\t\t\t\t\t\t\t\t\t" << "      |\t\t\t\t  " << endl;
+    cout << "\t\t\t\t\t\t\t\t\t" << " _____|_____\t\t\t  " << endl;
+
+
     cout << "\n\t\t\t\t\t\t\t\t" << system("pause");
     display::clearScreen();
 };
