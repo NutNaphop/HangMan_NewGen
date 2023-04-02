@@ -271,6 +271,7 @@ int menugame::showMenu() {
                 return 4 ;
             }
             else if(choice == "5"){
+                cout << "\n" ;
                 cout << "\t\t\t\t\t\t\t\t===========================================" << endl;
                 cout << "\t\t\t\t\t\t\t\t|||        Thank you for playing!       |||" << endl;
                 cout << "\t\t\t\t\t\t\t\t|||              Goodbye!               |||" << endl;
@@ -339,7 +340,7 @@ void highscore::writeHis(string name , string mode , int score){
 int highscore::getChoose(int mode){
     // while (true){
         do {
-            cin >> choose ; 
+            cout << "\t\t\t\t\t\t\t\t" << ">" ;cin >> choose ; 
             if (mode == 1) {
                 if (choose == 1){ return 1;}
                 else if (choose == 2) {return 2;} 
@@ -361,54 +362,93 @@ int highscore::getChoose(int mode){
 int highscore::easterEgg(){
 
     do {
-        cout << "You wake up in a mysterious pyramid. You see two paths before you." << endl ;
-        cout << "[1] Stay in the pyramid\n[2] Leave the pyramid" << endl ; 
+        cout << "\n" ;
+        cout << "\t\t\t\t\t\t\t\t+--------------------------------------------+" << endl;
+        cout << "\t\t\t\t\t\t\t\t|                                            |" << endl;
+        cout << "\t\t\t\t\t\t\t\t|    You wake up in a mysterious pyramid.    |" << endl;
+        cout << "\t\t\t\t\t\t\t\t|    You see two paths  before you.          |" << endl;
+        cout << "\t\t\t\t\t\t\t\t|                                            |" << endl;
+        cout << "\t\t\t\t\t\t\t\t|                                            |" << endl;
+        cout << "\t\t\t\t\t\t\t\t|         [1] Stay       [2] Move            |" << endl;
+        cout << "\t\t\t\t\t\t\t\t|                                            |" << endl;
+        cout << "\t\t\t\t\t\t\t\t+--------------------------------------------+" << endl;
         choose = highscore::getChoose(2);
         if (choose == 2){
             display::clearScreen();
             break;
         }
         else {
-            cout << "You can't stay here for too long! Let's go!" << endl ;
-            system("pause");
+            cout << "\n" ;
+            cout << "\t\t\t\t\t\t\t\t+----------------------------------------+" << endl;
+            cout << "\t\t\t\t\t\t\t\t|                                        |" << endl;
+            cout << "\t\t\t\t\t\t\t\t|    You can't stay here for too long!   |" << endl;
+            cout << "\t\t\t\t\t\t\t\t|                Let's go!               |" << endl;
+            cout << "\t\t\t\t\t\t\t\t|                                        |" << endl;
+            cout << "\t\t\t\t\t\t\t\t+----------------------------------------+" << endl;
+            cout << "\t\t\t\t\t\t\t\t" <<  system("pause");
             display::clearScreen();
         }
     }while(choose != 2);   
 
     do {
-        cout << "You walk through a door and see two more doors." << endl ;
-        cout << "[1] Door 1\n[2] Door 2" << endl ;
+            cout << "\n" ;
+            cout << "\t\t\t\t\t\t\t\t--------------------------------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t| You walk through a door and see two more doors |" << endl;
+            cout << "\t\t\t\t\t\t\t\t--------------------------------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t| [1] Door 1                                     |" << endl;
+            cout << "\t\t\t\t\t\t\t\t| [2] Door 2                                     |" << endl;
+            cout << "\t\t\t\t\t\t\t\t--------------------------------------------------" << endl;
         choose = highscore::getChoose(2);
         if (choose == 1){
             display::clearScreen();
             break;
         }
         if (choose == 2){
-            cout << "The room is too dark, you can't see anything and you fall into a deep hole. YOU DIE!" << endl ;
-            system("pause");
+            cout << "\n" ;
+            cout << "\t\t\t\t\t\t\t\t----------------------------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t| The room is too dark, you can't see anything |" << endl;
+            cout << "\t\t\t\t\t\t\t\t|         and you fall into a deep hole.       |" << endl;
+            cout << "\t\t\t\t\t\t\t\t|                  YOU DIE!                   |" << endl;
+            cout << "\t\t\t\t\t\t\t\t----------------------------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t" <<  system("pause");
             display::clearScreen();
             return 0 ;
         }
         else {
             cout << "Please choose 1 or 2." << endl ;
-            system("pause");
+            cout << "\t\t\t\t\t\t\t\t" <<  system("pause");
             display::clearScreen();
         }
     }while(choose!=1);
 
     do {
-        cout << "You walk through another door and see three doors." << endl ;
-        cout << "[1] Door 1\n[2] Door 2\n[3] Door 3" << endl ;
+            cout << "\n" ;
+            cout << "\t\t\t\t\t\t\t\t---------------------------------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t| You walk through a door and see three more doors |" << endl;
+            cout << "\t\t\t\t\t\t\t\t---------------------------------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t| [1] Door 1                                       |" << endl;
+            cout << "\t\t\t\t\t\t\t\t| [2] Door 2                                       |" << endl;
+            cout << "\t\t\t\t\t\t\t\t| [2] Door 3                                       |" << endl;
+            cout << "\t\t\t\t\t\t\t\t---------------------------------------------------" << endl;
         choose = highscore::getChoose(3);  
-        if (choose == 1){ 
-            cout << "You fall into a trap. YOU DIE!" << endl ;
-            system("pause");
+        if (choose == 1){
+            cout << "\n" ; 
+            cout << "\t\t\t\t\t\t\t\t----------------------------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t|             You fall into a trap.           |" << endl;
+            cout << "\t\t\t\t\t\t\t\t|                 YOU DIE!                    |" << endl;
+            cout << "\t\t\t\t\t\t\t\t----------------------------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t" << system("pause");
             display::clearScreen();
             return 0 ; 
         }
         else if (choose == 2){
-            cout << "You see the mummies and they kill you." << endl ;
-            system("pause"); 
+            cout << "\n" ;
+            cout << "\t\t\t\t\t\t\t\t+------------------------------------+" << endl;
+            cout << "\t\t\t\t\t\t\t\t|    You see the mummies and they    |" << endl;
+            cout << "\t\t\t\t\t\t\t\t|              kill you.             |" << endl;
+            cout << "\t\t\t\t\t\t\t\t|              YOU DIE!              |" << endl;
+            cout << "\t\t\t\t\t\t\t\t+------------------------------------+" << endl;
+            cout << "\t\t\t\t\t\t\t\t" <<  system("pause"); 
             display::clearScreen();
             return 0 ;
         }
@@ -417,19 +457,29 @@ int highscore::easterEgg(){
             break;
         }
         else {
-            cout << "Please choose 1, 2 or 3." << endl ;
-            system("pause");
+            cout << "\t\t\t\t\t\t\t\t" << "Please choose 1, 2 or 3." << endl ;
+            cout << "\t\t\t\t\t\t\t\t" << system("pause");
             display::clearScreen();
         }
     }while (choose!=3);
 
     do {
-        cout << "You walk through another door and see three more doors." << endl ;
-        cout << "[1] Door 1\n[2] Door 2\n[3] Door 3" << endl ;
+            cout << "\n" ;
+            cout << "\t\t\t\t\t\t\t\t---------------------------------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t| You walk through a door and see three more doors |" << endl;
+            cout << "\t\t\t\t\t\t\t\t---------------------------------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t| [1] Door 1                                       |" << endl;
+            cout << "\t\t\t\t\t\t\t\t| [2] Door 2                                       |" << endl;
+            cout << "\t\t\t\t\t\t\t\t| [2] Door 3                                       |" << endl;
+            cout << "\t\t\t\t\t\t\t\t---------------------------------------------------" << endl;
         choose = highscore::getChoose(3);  
-        if (choose == 1){ 
-            cout << "It's a dead end. Sorry!" << endl ;
-            system("pause");
+        if (choose == 1){
+            cout << "\n" ; 
+            cout << "\t\t\t\t\t\t\t\t---------------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t| It's a dead end. Sorry!       |" << endl;
+            cout << "\t\t\t\t\t\t\t\t---------------------------------" << endl;
+
+            cout << "\t\t\t\t\t\t\t\t" <<  system("pause");
             display::clearScreen();
         }
         else if (choose == 2){
@@ -437,13 +487,19 @@ int highscore::easterEgg(){
             break ;
         }
         else if (choose == 3){
-            cout << "You have escaped the pyramid and there's no way to enter again. Congratulations, you've made it out with a good ending!" << endl ;
-            system("pause");
+            cout << "\n" ;
+            cout << "\t\t\t\t\t\t\t\t------------------------------------------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t| You have escaped the pyramid and there's no way to enter |" << endl;
+            cout << "\t\t\t\t\t\t\t\t| again. Congratulations, you've made it out with a good   |" << endl;
+            cout << "\t\t\t\t\t\t\t\t|                          ending!                         |" << endl;
+            cout << "\t\t\t\t\t\t\t\t------------------------------------------------------------" << endl;
+
+            cout << "\t\t\t\t\t\t\t\t" <<  system("pause");
             display::clearScreen();
             return 0 ;
         }
         else {
-            cout << "Please choose 1, 2 or 3." << endl ;
+            cout << "\t\t\t\t\t\t\t\t" << "Please choose 1, 2 or 3." << endl ;
             system("pause");
             display::clearScreen();
         }
@@ -451,49 +507,88 @@ int highscore::easterEgg(){
        }while(choose != 2);
 
        do {
-            cout << "You approach a door and see a long hallway. Will you walk or sprint?" << endl;
-            cout << "[1] Walk [2] Sprint" << endl;
-            cout << "Choose an option: ";
+            cout << "\n" ;
+            cout << "\t\t\t\t\t\t\t\t------------------------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t|                                         |" << endl;
+            cout << "\t\t\t\t\t\t\t\t| You approach a door and see a long      |" << endl;
+            cout << "\t\t\t\t\t\t\t\t| hallway. Will you walk or sprint?       |" << endl;
+            cout << "\t\t\t\t\t\t\t\t|                                         |" << endl;
+            cout << "\t\t\t\t\t\t\t\t| [1] Walk                  [2] Sprint    |" << endl;
+            cout << "\t\t\t\t\t\t\t\t|                                         |" << endl;
+            cout << "\t\t\t\t\t\t\t\t------------------------------------------" << endl;
             choose = highscore::getChoose(1);
             if (choose == 1){
             display::clearScreen();
             break ;
             }
             else if (choose == 2){
-            cout << "Unfortunately, you were moving too quickly and triggered an arrow trap. You take the shot in your head. GAME OVER." << endl;
+            cout << "\n" ;
+            cout << "\t\t\t\t\t\t\t\t+--------------------------------------------------------------+\n";
+            cout << "\t\t\t\t\t\t\t\t|   Unfortunately, you were moving too quickly and triggered   |\n";
+            cout << "\t\t\t\t\t\t\t\t|                      an arrow trap.                          |\n";
+            cout << "\t\t\t\t\t\t\t\t|                You take the shot in your head.               |\n";
+            cout << "\t\t\t\t\t\t\t\t|                        YOU DIE ! ! !                         |\n";
+            cout << "\t\t\t\t\t\t\t\t+--------------------------------------------------------------+\n";
+
             system("pause");
             display::clearScreen();
             return 0 ;
             }
             else {
-            cout << "Invalid choice. Please choose 1 or 2." << endl ;
-            system("pause");
+            cout << "\t\t\t\t\t\t\t\t" <<  "Invalid choice. Please choose 1 or 2." << endl ;
+            cout << "\t\t\t\t\t\t\t\t" << system("pause");
             display::clearScreen();
             }
         } while (choose != 1);
 
             do {
-            cout << "You come across two treasure chests. Which one will you choose?" << endl;
-            cout << "[1] Left [2] Right" << endl;
-            cout << "Choose an option: ";
+            cout << "\n" ;
+            cout << "\t\t\t\t\t\t\t\t---------------------------" << endl;
+            cout << "\t\t\t\t\t\t\t\t| You come across two     |" << endl;
+            cout << "\t\t\t\t\t\t\t\t| treasure chests. Which  |" << endl;
+            cout << "\t\t\t\t\t\t\t\t| one will you choose?    |" << endl;
+            cout << "\t\t\t\t\t\t\t\t|-------------------------|" << endl;
+            cout << "\t\t\t\t\t\t\t\t| [1] Left       [2] Right|" << endl;
+            cout << "\t\t\t\t\t\t\t\t---------------------------" << endl;
             choose = highscore::getChoose(1);
             if (choose == 1){
-                cout << "Oops! It was a fake treasure chest and you triggered a stone trap. GAME OVER." << endl;
+                cout << "\n" ;
+                cout << "\t\t\t\t\t\t\t\t------------------------------------------------------------" << endl;
+                cout << "\t\t\t\t\t\t\t\t|                                                          |" << endl;
+                cout << "\t\t\t\t\t\t\t\t|   Oops! It was a fake treasure chest and you triggered   |" << endl;
+                cout << "\t\t\t\t\t\t\t\t|            a stone trap. GAME OVER.                       |" << endl;
+                cout << "\t\t\t\t\t\t\t\t|                                                          |" << endl;
+                cout << "\t\t\t\t\t\t\t\t------------------------------------------------------------" << endl;
                 system("pause");
                 display::clearScreen();
                 return 0 ;
             }
             else if (choose == 2){
-                cout << "Congratulations! You found the valuable treasure chest and earned 10,000 points. You have completed the game 100%. Your achievement has been recorded in the scoreboard!" << endl;
+                cout << "\n" ;
+                cout << "\t\t\t\t\t\t\t\t+----------------------------------------+" << endl;
+                cout << "\t\t\t\t\t\t\t\t| Congratulations!                       |" << endl;
+                cout << "\t\t\t\t\t\t\t\t| You found the valuable treasure chest  |" << endl;
+                cout << "\t\t\t\t\t\t\t\t| and earned 10,000 points.              |" << endl;
+                cout << "\t\t\t\t\t\t\t\t| You have completed the game 100%.      |" << endl;
+                cout << "\t\t\t\t\t\t\t\t| Your achievement has been recorded in  |" << endl;
+                cout << "\t\t\t\t\t\t\t\t| the scoreboard!                        |" << endl;
+                cout << "\t\t\t\t\t\t\t\t+----------------------------------------+" << endl;
+
                 highscore::writeHis(game::name, "Secret", 10000);
-                cout << "Returning to HANGMAN GAME." << endl;
-                system("pause");
+                cout << "\t\t\t\t\t\t\t\t" <<  "Returning to HANGMAN GAME." << endl;
+                cout << "\t\t\t\t\t\t\t\t" << system("pause");
                 display::clearScreen();
                 break;
             }
             else {
-            cout << "Invalid choice. Please choose 1 or 2." << endl;
+            cout << "\t\t\t\t\t\t\t\t" <<  "Invalid choice. Please choose 1 or 2." << endl;
+            cout << "\t\t\t\t\t\t\t\t" <<  system("pause");
+            display::clearScreen();
             }
         } while (choose != 1);
 };
+// int main(){
+//     highscore o;
+//     o.easterEgg();
+// }
 #endif
