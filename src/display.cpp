@@ -224,14 +224,14 @@ void menugame::showHowto(){
         cout << "\t\t\t\t\t\t\t| 2.Select the word category you want to play.                                |" << endl;
         cout << "\t\t\t\t\t\t\t| 3.The program will have a '-' on the syllables of the word,                 |" << endl;
         cout << "\t\t\t\t\t\t\t|   the number of your life and a beam with a noose hanging down.             |" << endl;
-        cout << "\t\t\t\t\t\t\t|   3.1 You have to guess 1 letter per 1 round, you will have 5 life,         |" << endl;
+        cout << "\t\t\t\t\t\t\t|   3.1 You have to guess 1 letter per 1 round, you will have 7 life,         |" << endl;
         cout << "\t\t\t\t\t\t\t|       i.e. the number of times you can answer incorrectly.                  |" << endl;
         cout << "\t\t\t\t\t\t\t|    - if there is that letter in the word, life will be the same and         |" << endl;
         cout << "\t\t\t\t\t\t\t|      will get 10 points.                                                    |" << endl;
         cout << "\t\t\t\t\t\t\t|    - If guessed wrong, life will be reduced by one. same score              |" << endl;
         cout << "\t\t\t\t\t\t\t|      But there will be a head, arms, legs, respectively.                    |" << endl;
         cout << "\t\t\t\t\t\t\t| 4.When you guess the word correctly before life runs out.                   |" << endl;
-        cout << "\t\t\t\t\t\t\t|   will be able to start the next game immediately And will keep your        |" << endl;
+        cout << "\t\t\t\t\t\t\t|   will be able to start the next game immediately And will keep your score  |" << endl;
         cout << "\t\t\t\t\t\t\t| 5.If you guess until life runs out The system will show the current score   |" << endl;
         cout << "\t\t\t\t\t\t\t|   and answer that word.                                                     |" << endl;
         cout << "\t\t\t\t\t\t\t+=============================================================================+" << endl;
@@ -314,13 +314,19 @@ void highscore::sortByScoreDescending() {
     
 void highscore::display(){
     cout << "\n" ;
-    cout << "\t\t\t\t\t\t\t\t"<< "_____________________________________" << endl ;
-        cout << "\t\t\t\t\t\t\t\t"<< "Name\t\t" << "Mode\t\t" << "Score" << endl ; 
-        cout << "\t\t\t\t\t\t\t\t"<< "_____________________________________" << endl ; 
+    cout << "\t\t\t\t\t\t\t\t+----------------------------------------------+" << endl;
+    cout << "\t\t\t\t\t\t\t\t|                                              |" << endl;
+    cout << "\t\t\t\t\t\t\t\t|                 SCORE BOARD                  |" << endl;
+    cout << "\t\t\t\t\t\t\t\t|                                              |" << endl;
+    cout << "\t\t\t\t\t\t\t\t+----------------------------------------------+" << endl;
+
+    cout << "\t\t\t\t\t\t\t\t"<< "________________________________________________" << endl ;
+        cout << "\t\t\t\t\t\t\t\t\t"<< "Name\t\t" << "Mode\t\t" << "Score" << endl ; 
+        cout << "\t\t\t\t\t\t\t\t"<< "________________________________________________" << endl ; 
         for (const auto& entry : scores_) {
-            cout << "\t\t\t\t\t\t\t\t"<< get<0>(entry) << "\t\t" << get<1>(entry) << "\t\t" << get<2>(entry) << endl;
+            cout << "\t\t\t\t\t\t\t\t\t"<< get<0>(entry) << "\t\t" << get<1>(entry) << "\t\t" << get<2>(entry) << endl;
         }
-        cout << "\t\t\t\t\t\t\t\t"<< "_____________________________________" << endl ; 
+        cout << "\t\t\t\t\t\t\t\t"<< "________________________________________________" << endl ; 
         cout << endl << "\t\t\t\t\t\t\tI'm waiting for a challenger who can beat me  ,But NO ONE !" << endl;
         cout << "\t\t\t\t\t\t\tGo back to the menu" << endl ; 
         cout << "\t\t\t\t\t\t\t" << system("pause");

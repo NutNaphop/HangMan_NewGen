@@ -103,11 +103,6 @@ class display {
     public : 
         display(int score , int life);
         display(int life);
-        // static void life(int life){
-        //     for (int i = life; i > 0 ; i --){
-        //         cout << "*" ; 
-        //     }
-        // }
         static void HUD(int score , int life){
             cout << "\t\t\t\t\t\t\t\t" ;
              cout << "+------------------------------------------------------------------+" << endl;
