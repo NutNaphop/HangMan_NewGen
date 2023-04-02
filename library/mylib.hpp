@@ -12,6 +12,9 @@
 # include <vector> // sort score function
 # include <algorithm> // sort score function
 # include <tuple> // sort score function
+#include <unistd.h>
+#include <Windows.h>
+#include <iomanip>
 
 using namespace std ;
 //Menu 
@@ -22,6 +25,7 @@ class menugame{
      void showHighScore() ;
      void showVocab() ;
      void showHowto();
+     void intro();
 };
 
 class highscore : public menugame{
@@ -42,7 +46,7 @@ class import {
         string filename;
         string line ;
         string category ; 
-        int choose ; 
+        string choose ; 
         string words[100]; 
         static int index ;
         int ImportFile(int choice);
@@ -95,8 +99,28 @@ class display {
     public : 
         display(int score , int life);
         display(int life);
+        static void life(int life){
+            for (int i = life; i > 0 ; i --){
+                cout << "*" ; 
+            }
+        }
         static void HUD(int score , int life){
-        cout << "Name : " << game::name << " Life : " << life << " Score : " << score << endl  ;
+            cout << "\t\t\t\t\t\t\t\t" ;
+             cout << "+------------------------------------------------------------------+" << endl;
+             cout << "\t\t\t\t\t\t\t\t" ;
+             cout << "  Score: " << setw(7) << setfill('0') << score;
+             cout << "         Name: " << game::name;
+             cout << "         Lives: ";
+             for (int i = life ; i > 0 ; i--){
+                cout << "*" ;
+             }
+            cout << "       " << endl;
+        cout << "\t\t\t\t\t\t\t\t" ;
+        cout << "+------------------------------------------------------------------+" << endl;
+        }
+        static void clearScreen(){
+            sleep(0.75);
+            system("cls");
         }
 };
 

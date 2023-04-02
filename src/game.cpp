@@ -8,15 +8,15 @@ int import::ImportFile(int choice){
                 switch (choice){
                     case 1 : 
                         filename = "../text/animal.txt";
-                        category = "animal" ;
+                        category = "Animal" ;
                         break;
                     case 2 : 
                         filename = "../text/country.txt";
-                        category = "country" ;
+                        category = "Country" ;
                         break;
                     case 3 : 
                         filename = "../text/all.txt";
-                        category = "One for all" ;
+                        category = "NigthM" ;
                         break;
                 }
                 myfile.open(filename);
@@ -39,10 +39,34 @@ void import::showFile(){
         cout << words[i] << endl ;
     }
 }
-void import::selectCate() { // Need to fix bug 
-
-    cout << "Select Cate : " ; cin >> choose;  
-    import::ImportFile(choose);
+void import::selectCate() { // Need to fix bug
+    cout << "\n"; // add blank lines to center text vertically
+    cout << "\t\t\t\t\t\t\t\t\t--------------------------------------\n";
+    cout << "\t\t\t\t\t\t\t\t\t|          Choose category            |\n";
+    cout << "\t\t\t\t\t\t\t\t\t--------------------------------------\n";
+    cout << "\t\t\t\t\t\t\t\t\t|  [1] Animal                         |\n";
+    cout << "\t\t\t\t\t\t\t\t\t|  [2] Country                        |\n";
+    cout << "\t\t\t\t\t\t\t\t\t|  [3] Nightmare (All)                |\n";
+    cout << "\t\t\t\t\t\t\t\t\t--------------------------------------\n";
+    cout << "\t\t\t\t\t\t\t\t\t  What do you want? : ";
+    cin >> choose;
+        switch (choose[0]) {
+            case '1':
+                display::clearScreen();
+                import::ImportFile(1);
+                break;
+            case '2':
+                display::clearScreen();
+                import::ImportFile(2);
+                break;
+            case '3':
+                display::clearScreen();
+                import::ImportFile(3);
+                break;
+            default:
+                display::clearScreen();
+                import::selectCate();
+            };
 };
 
 void game::restart(){
@@ -61,7 +85,9 @@ void game::randWord(string *arr){
 }
 
 void game::remaining(char* arr){
-     cout << "Now You Have => "; 
+     cout << "\n" ; 
+     cout << "\n" ; 
+     cout << "\t\t\t\t\t\t\t\t\t\t     Now You Have => ";
             // Remaining Word
             for (int i = 0 ; i  < word.length() ; i ++){                                
                 if (arr[i] != '\0'){
@@ -71,19 +97,32 @@ void game::remaining(char* arr){
                     cout << "-";
                                 }
                             }
-                cout << endl ;
+    cout << endl ;
+    cout << "\n" ; 
 }
 string game::getName(){
-        cout << "Before We Start I need to know your name : " << endl; 
+        cout << "\n" ;
+    cout << "\t\t\t\t\t\t\t\t------------------------------------------------------" << endl;
+    cout << "\t\t\t\t\t\t\t\t|                                                     |" << endl;
+    cout << "\t\t\t\t\t\t\t\t|              BEFORE WE START, YOUR NAME?            |" << endl;
+    cout << "\t\t\t\t\t\t\t\t|                                                     |" << endl;
+    cout << "\t\t\t\t\t\t\t\t------------------------------------------------------" << endl;
+   
         while (true){
-            cout << "Input You Name : " ; 
+            cout << "\t\t\t\t\t\t\t\tYour Name : " ; 
             getline(cin,name);  
             for (int i = 0 ; i < name.length() ; i ++ ){
-                if (isspace(name[i])){
-                    cout << "non whitespace please try again" << endl;;
+                if (isspace(name[i]) || name.length() > 7 || name.length()<0){
+                    cout << "\t\t\t\t\t\t\t\t--------------------------------------------------" << endl;
+                    cout << "\t\t\t\t\t\t\t\t|  Your name should be between 1 and 6 characters  |" << endl;
+                    cout << "\t\t\t\t\t\t\t\t|     No whitespaces allowed, please try again     |" << endl;
+                    cout << "\t\t\t\t\t\t\t\t--------------------------------------------------" << endl;
+                    cout << "\t\t\t\t\t\t\t\t" << system("pause");
+                    display::clearScreen(); 
                     game::getName();
                 }
-            } 
+            }
+        display::clearScreen(); 
         return name ;
         }
 };
@@ -103,18 +142,36 @@ int game::inGame(){
                 }
                 // Check Detect Error out of range lowercase alpha 
                     do {
-                        cout << "Input : " ; cin >> alpha ;
+                        cout << "\t\t\t\t\t\t\t\t\t\t+------------------------------------+" << endl;
+                        cout << "\t\t\t\t\t\t\t\t\t\t| Enter a lowercase letter:          |" << endl;
+                        cout << "\t\t\t\t\t\t\t\t\t\t+------------------------------------+" << endl;
+                        cout << "\t\t\t\t\t\t\t\t\t\t> ";
+                        cin >> alpha ;
+                        
                         if (!islower(alpha[0])){
-                            cout << "Input Only lowercase" ;
+                            cout << "\t\t\t\t\t\t\t\t\t\t+------------------------------------+" << endl;
+                            cout << "\t\t\t\t\t\t\t\t\t\t| Invalid input! Please try again.   |" << endl;
+                            cout << "\t\t\t\t\t\t\t\t\t\t+------------------------------------+" << endl;
+                            display::clearScreen();
+                            display::HUD(score,life);
+                            objA.animate(life);
+                            game::remaining(guess);
                         }
-                    }while (!islower(alpha[0]));
+                        else if (alpha.length() > 1) { 
+                            display::clearScreen();
+                            display::HUD(score,life);
+                            objA.animate(life);
+                            game::remaining(guess);
+                        }
+                    }while (!islower(alpha[0]) || alpha.length() > 1 );
                     for (int j = 0 ; j < word.length() ; j++){
                         if (alpha[0] == word[j]){
                             guess[j] = word[j] ;
                             word[j] = '\0' ; 
                             count ++ ;
-                            score += 10 ; 
+                            score += 10 ;
                             display objD(10,life);
+                            display::clearScreen(); 
                             objD.HUD(score,life);
                             objA.animate(life);
                             game::remaining(guess);
@@ -123,6 +180,7 @@ int game::inGame(){
                             if (j == word.length()-1){
                                 life --;
                                 display objD(life);
+                                display::clearScreen();
                                 objD.HUD(score,life);
                                 objA.animate(life);
                                 game::remaining(guess);
@@ -132,17 +190,28 @@ int game::inGame(){
                     }
                 }
             if (life == 0){
-                cout << "The Answer is : "<<temp_word << endl ;
-                index = 0 ;
-                cout << "Hey " << game::name << "You have got " << game::score << " point" << endl ;
-                cout << "We will write it in our history, Hope you like it!" << endl ;
+                cout << endl;
+                cout << "\t\t\t\t\t\t\t\t+--------------------------------------------------------+" << endl;
+                cout << "\t\t\t\t\t\t\t\t|                        GAME OVER                       |" << endl;
+                cout << "\t\t\t\t\t\t\t\t+--------------------------------------------------------+" << endl;
+                cout << "\t\t\t\t\t\t\t\t|                                                        |" << endl;
+                cout << "\t\t\t\t\t\t\t\t|  The answer is: " << temp_word << endl;
+                cout << "\t\t\t\t\t\t\t\t|                                                        |" << endl;
+                cout << "\t\t\t\t\t\t\t\t|  Hey " << game::name << ", you scored " << game::score << " points!" << endl;
+                cout << "\t\t\t\t\t\t\t\t|                                                        |" << endl;
+                cout << "\t\t\t\t\t\t\t\t|  Your score has been added to our history. Thanks for  |" << endl;
+                cout << "\t\t\t\t\t\t\t\t|  playing!                                              |" << endl;
+                cout << "\t\t\t\t\t\t\t\t|                                                        |" << endl;
+                cout << "\t\t\t\t\t\t\t\t+--------------------------------------------------------+" << endl;
                 objHighscore.writeHis(name,category,score);
                 life = 7 ; 
                 score = 0 ;
-                system("pause") ; 
+                cout << "\t\t\t\t\t\t\t\t" << system("pause") ;
+                display::clearScreen(); 
                 return 0 ; 
             } 
             else {
+                display::clearScreen();
                 game::inGame();
             }
 };
