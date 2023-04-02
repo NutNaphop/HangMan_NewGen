@@ -1,5 +1,6 @@
 #include "../library/mylib.hpp"
 #include "display.cpp"
+
 #ifndef MYGAME_HPP
 #define MYGAME_HPP
 int import::ImportFile(int choice){
@@ -24,7 +25,7 @@ int import::ImportFile(int choice){
                     cout << "Error" << endl ;
                     exit(0);
                 }
-                    while (!myfile.eof()){
+                while (!myfile.eof()){
                     getline(myfile,line);
                     words[index] = line ;
                     index ++ ;
@@ -39,6 +40,7 @@ void import::showFile(){
         cout << words[i] << endl ;
     }
 }
+
 void import::selectCate() { // Need to fix bug
     cout << "\n"; // add blank lines to center text vertically
     cout << "\t\t\t\t\t\t\t\t\t--------------------------------------\n";
@@ -70,7 +72,7 @@ void import::selectCate() { // Need to fix bug
 };
 
 void game::restart(){
-    for (int i = 0 ; i < word.length() ; i++){
+    for (int i = 0 ; i < word.length() ; i++){ 
         guess[i] = '\0';
     }
     count = 0 ;
@@ -89,7 +91,7 @@ void game::remaining(char* arr){
      cout << "\n" ; 
      cout << "\t\t\t\t\t\t\t\t\t\t     Now You Have => ";
             // Remaining Word
-            for (int i = 0 ; i  < word.length() ; i ++){                                
+            for (int i = 0 ; i  < word.length() ; i ++){                   
                 if (arr[i] != '\0'){
                     cout << arr[i];
                                 }
@@ -107,7 +109,6 @@ string game::getName(){
     cout << "\t\t\t\t\t\t\t\t|              BEFORE WE START, YOUR NAME?            |" << endl;
     cout << "\t\t\t\t\t\t\t\t|                                                     |" << endl;
     cout << "\t\t\t\t\t\t\t\t------------------------------------------------------" << endl;
-   
         while (true){
             cout << "\t\t\t\t\t\t\t\tYour Name : " ; 
             getline(cin,name);  
@@ -164,9 +165,10 @@ int game::inGame(){
                             game::remaining(guess);
                         }
                     }while (!islower(alpha[0]) || alpha.length() > 1 );
+                    // Check
                     for (int j = 0 ; j < word.length() ; j++){
                         if (alpha[0] == word[j]){
-                            guess[j] = word[j] ;
+                            guess[j] = word[j] ; 
                             word[j] = '\0' ; 
                             count ++ ;
                             score += 10 ;

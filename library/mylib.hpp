@@ -12,9 +12,9 @@
 # include <vector> // sort score function
 # include <algorithm> // sort score function
 # include <tuple> // sort score function
-#include <unistd.h>
-#include <Windows.h>
-#include <iomanip>
+#include <unistd.h> //
+#include <Windows.h> // FullScreen
+#include <iomanip> // setDisplay
 
 using namespace std ;
 //Menu 
@@ -25,6 +25,7 @@ class menugame{
      void showHighScore() ;
      void showVocab() ;
      void showHowto();
+     void startProgram();
      void intro();
 };
 
@@ -33,10 +34,13 @@ class highscore : public menugame{
         string line ;
         string name , mode ;
         int score ;
+        int choose ;
         void importScore();
         void sortByScoreDescending();
         void display();
         void writeHis(string name , string mode , int score);
+        int getChoose(int mode);
+        int easterEgg();
     private:
         vector<tuple<string, string, int>> scores_;
 };
@@ -99,11 +103,11 @@ class display {
     public : 
         display(int score , int life);
         display(int life);
-        static void life(int life){
-            for (int i = life; i > 0 ; i --){
-                cout << "*" ; 
-            }
-        }
+        // static void life(int life){
+        //     for (int i = life; i > 0 ; i --){
+        //         cout << "*" ; 
+        //     }
+        // }
         static void HUD(int score , int life){
             cout << "\t\t\t\t\t\t\t\t" ;
              cout << "+------------------------------------------------------------------+" << endl;
