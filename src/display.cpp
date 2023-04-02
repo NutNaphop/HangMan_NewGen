@@ -247,7 +247,7 @@ int menugame::showMenu() {
         cout << "\t\t\t\t\t\t\t\t+================================================+" << endl;
         cout << "\t\t\t\t\t\t\t\t|    [1] Playgame                                |" << endl;
         cout << "\t\t\t\t\t\t\t\t|    [2] Howtoplay                               |" << endl;
-        cout << "\t\t\t\t\t\t\t\t|    [3] Highscore                               |" << endl;
+        cout << "\t\t\t\t\t\t\t\t|    [3] Scoreboard                              |" << endl;
         cout << "\t\t\t\t\t\t\t\t|    [4] Vocabulary                              |" << endl;
         cout << "\t\t\t\t\t\t\t\t|    [5] Exit                                    |" << endl;
         cout << "\t\t\t\t\t\t\t\t+================================================+" << endl;
