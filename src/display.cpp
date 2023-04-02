@@ -593,8 +593,4 @@ int highscore::easterEgg(){
             }
         } while (choose != 1);
 };
-// int main(){
-//     highscore o;
-//     o.easterEgg();
-// }
 #endif
