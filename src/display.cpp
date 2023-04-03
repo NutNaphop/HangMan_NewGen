@@ -3,6 +3,14 @@
 #define DISPLAY
 
 // Animation Section Class 
+text::text(int a){
+    cout << "\t\t\t\t\t\t\t\t\t\t\t"<< "Character True : " << a << endl ;
+    cout << "\t\t\t\t\t\t\t\t\t\t\t"<< "Let you guess" << endl ;
+}
+text::text(int a , int b){
+    cout << "\t\t\t\t\t\t\t\t\t\t\t"<< "Character True : " << a << endl ;
+    cout << "\t\t\t\t\t\t\t\t\t\t\t"<< "Come on ! ! ! !" << endl ;
+}
 void animation::eight(){
     cout << "\n" ;
     cout << "\t\t\t\t\t\t\t\t\t\t" << "       ___________\n" ; 

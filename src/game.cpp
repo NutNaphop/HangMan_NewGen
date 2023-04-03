@@ -83,6 +83,7 @@ void game::randWord(string *arr){
     srand((unsigned) time(NULL)); 
     random = rand() % index ; 
     word = arr[random] ; 
+    // cout << word << endl ;
     temp_word = word ;  
 }
 
@@ -128,12 +129,13 @@ string game::getName(){
         }
 };
 int game::inGame(){
-    animation objA ; 
+    animation objA ;
     highscore objHighscore ; 
      // We need to move this but not now
     game::restart();
     game::randWord(words);
     display::HUD(score,life);
+    text objText(count);
     objA.animate(life);
     game::remaining(guess);
     // cout << word << endl;
@@ -155,12 +157,14 @@ int game::inGame(){
                             cout << "\t\t\t\t\t\t\t\t\t\t+------------------------------------+" << endl;
                             display::clearScreen();
                             display::HUD(score,life);
+                            text objText(count+1);
                             objA.animate(life);
                             game::remaining(guess);
                         }
                         else if (alpha.length() > 1) { 
                             display::clearScreen();
                             display::HUD(score,life);
+                            text objText(count+1);
                             objA.animate(life);
                             game::remaining(guess);
                         }
@@ -175,6 +179,7 @@ int game::inGame(){
                             display objD(10,life);
                             display::clearScreen(); 
                             objD.HUD(score,life);
+                            text objText(count);
                             objA.animate(life);
                             game::remaining(guess);
                             break;
@@ -184,6 +189,7 @@ int game::inGame(){
                                 display objD(life);
                                 display::clearScreen();
                                 objD.HUD(score,life);
+                                text objText(count,0);
                                 objA.animate(life);
                                 game::remaining(guess);
                                 break;

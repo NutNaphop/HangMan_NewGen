@@ -10,7 +10,7 @@ int main(){
     int control;
     string name_user ;
    keybd_event(VK_F11, 0, 0, 0);
-   objMenu.intro();
+//   objMenu.intro();
     obj1.getName() ; 
     while (true){
             objHS.importScore();

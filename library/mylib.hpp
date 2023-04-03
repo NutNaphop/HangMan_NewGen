@@ -84,7 +84,12 @@ int game::score = 0 ;
 int game::count = 0 ;
 char game::guess[] = {}; 
 string game::name = "player1" ;
-
+class text { 
+    public : 
+        text(int a );
+        text(int a , int b);
+        // Overloading 1st
+};
 class animation{
     public : 
         void animate(int a);
@@ -103,6 +108,7 @@ class display {
     public : 
         display(int score , int life);
         display(int life);
+        // Overloading 1st
         static void HUD(int score , int life){
             cout << "\t\t\t\t\t\t\t\t" ;
              cout << "+------------------------------------------------------------------+" << endl;
