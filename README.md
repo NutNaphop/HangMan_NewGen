@@ -1,3 +1,4 @@
+<img src = "https://cdn.discordapp.com/attachments/1090145030817189938/1092273856061907046/image.png"> </img>
 # Hangman Game
 Welcome to the Hangman Game! This is a classic word-guessing game where you try to guess a hidden word by suggesting letters, with each incorrect guess resulting in the drawing of a hanging man.
 
