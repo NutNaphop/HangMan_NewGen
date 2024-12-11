@@ -18,20 +18,20 @@ This project requires a C++ compiler to build and run.
 
 # Installation
 To install and run the game on your computer, follow these steps:
-```bash
-Clone the repository to your local machine: git clone https://github.com/NutNaphop/HangMan_NewGen.git
-```
-Compile the game using your C++ compiler: 
 
+**Clone the repository to your computer:** 
+```bash
+git clone https://github.com/NutNaphop/HangMan_NewGen.git
+```
+**Compile the game using your C++ compiler:** 
 ```bash
 g++ -o hangman main.cpp
 ```
-Run the game executable: 
-
+**Run the game executable:**
 ```bash
 ./hangman
 ```
-other ways 
+**other ways**
 ```bash
 run main.exe
 ```
