@@ -9,12 +9,8 @@ int main(){
     highscore objHS;
     int control;
     string name_user ;
-   keybd_event(VK_F11, 0, 0, 0);
-<<<<<<< HEAD
-   objMenu.intro();
-=======
+    keybd_event(VK_F11, 0, 0, 0);
     objMenu.intro();
->>>>>>> df8b60ce9db45937bd068181e2cd136925dd2a6c
     obj1.getName() ; 
     while (true){
             objHS.importScore();
