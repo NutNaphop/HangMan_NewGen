@@ -25,14 +25,11 @@ git clone https://github.com/NutNaphop/HangMan_NewGen.git
 ```
 **Compile the game using your C++ compiler:** 
 ```bash
+cd src
 g++ -o hangman main.cpp
 ```
 **Run the game executable:**
 ```bash
 ./hangman
-```
-**other ways**
-```bash
-run main.exe
 ```
 # Enjoy the game!
